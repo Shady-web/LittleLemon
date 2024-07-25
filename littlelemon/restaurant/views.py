@@ -7,6 +7,9 @@ from .models import MenuItem, Booking
 from .serializers import MenuItemSerializer, BookingSerializer, UserSerializer
 
 
+def index(request):
+    return render(request, 'index.html', {})
+
 class MenuItemView(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticated]
     queryset = MenuItem.objects.all()
